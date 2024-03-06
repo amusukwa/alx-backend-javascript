@@ -9,9 +9,6 @@ export default function handleResponseFromAPI(promise) {
     })
     .catch((error) => {
       console.error('Error from the API:', error);
-      return new Error(); 
-    })
-    .finally(() => {
-      console.log('Handle response complete'); 
+      return new Error(); // Return an empty Error object
     });
 }
