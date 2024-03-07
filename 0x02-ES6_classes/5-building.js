@@ -14,8 +14,31 @@ export default class Building {
     return this._sqft;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage.');
+  set sqft(newSqft) {
+    if (typeof newSqft !== 'number') {
+      throw new Error('Sqft must be a number.');
+    }
+    this._sqft = newSqft;
   }
+}
+if (require.main === module) {
+  const b = new Building(100);
+  console.log(b);
+
+  class TestBuilding extends Building {
+    evacuationWarningMessage() //eslint-disable-line class-methods-use-this
+	  {
+      console.log('Custom evacuation warning message.');
+    }
+  }
+
+  function createTestBuilding() {
+    try {
+      new TestBuilding(200);
+    } catch (err) {
+      console.log('Class extending Building must override evacuationWarningMessage.');
+    }
+  }
+
+  createTestBuilding();
 }
