@@ -1,6 +1,5 @@
-class HolbertonCourse {
+export default class HolbertonCourse {
   constructor(name, length, students) {
-    
     if (typeof name !== 'string' || typeof length !== 'number' || !Array.isArray(students)) {
       throw new Error('Invalid input types. Name must be a string, length must be a number, and students must be an array.');
     }
@@ -10,7 +9,6 @@ class HolbertonCourse {
     this._students = students;
   }
 
-  // Getter and setter for the name attribute
   get name() {
     return this._name;
   }
@@ -22,7 +20,6 @@ class HolbertonCourse {
     this._name = newName;
   }
 
-  // Getter and setter for the length attribute
   get length() {
     return this._length;
   }
