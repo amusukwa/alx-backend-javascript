@@ -24,11 +24,7 @@ export default class Building {
 
 // Define Skyscraper class outside of Building
 export class Skyscraper extends Building {
-  constructor(sqft) {
-    super(sqft);
-  }
-
-  evacuationWarningMessage() {
+  static evacuationWarningMessage() {
     return 'Please evacuate the building immediately!';
   }
 }
