@@ -17,7 +17,18 @@ export default class Building {
     this._sqft = newSqft;
   }
 
-  evacuationWarningMessage() {
+  static evacuationWarningMessage() {
     throw new Error('Class extending Building must override evacuationWarningMessage.');
+  }
+}
+
+// Define Skyscraper class outside of Building
+export class Skyscraper extends Building {
+  constructor(sqft) {
+    super(sqft);
+  }
+
+  evacuationWarningMessage() {
+    return 'Please evacuate the building immediately!';
   }
 }
