@@ -2,7 +2,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "check-lint": "lint [0-9]*.js",
-    "dev": "babel-node 3-main.js",
+    "dev": "babel-node 8-main.js",
     "test": "jest",
     "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   },
@@ -23,6 +23,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "babel": "^6.23.0"
+  "babel": "^6.23.0"
   }
+
 }
