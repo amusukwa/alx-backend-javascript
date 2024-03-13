@@ -11,6 +11,10 @@ interface Directors extends Teacher {
     numberOfReports: number;
 }
 
+interface PrintTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
 const teacher3: Teacher = {
     firstName: 'John',
     fullTimeEmployee: false,
@@ -30,3 +34,40 @@ const director1: Directors = {
 };
 
 console.log(director1);
+
+const printTeacher: PrintTeacherFunction = (firstName, lastName) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
+
+// Define an interface for the constructor of StudentClass
+interface StudentConstructor {
+    firstName: string;
+    lastName: string;
+}
+
+// Define an interface for the StudentClass
+interface StudentClass {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+// Implement the StudentClass
+class Student implements StudentClass {
+    firstName: string;
+    lastName: string;
+
+    constructor({ firstName, lastName }: StudentConstructor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
