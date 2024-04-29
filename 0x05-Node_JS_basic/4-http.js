@@ -1,15 +1,14 @@
+// 4-http.js
+
 const http = require('http');
 
-// Create the HTTP server
-const app = http.createServer((req, res) => {
-    // Set the response status and headers
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+const PORT = 3000;
 
-    // Send the response body
+const app = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!\n');
 });
 
-app.listen(1245);
-
-// Export the app variable
-module.exports = app;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
