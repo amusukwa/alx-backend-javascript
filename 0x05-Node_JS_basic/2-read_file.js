@@ -23,10 +23,10 @@ function countStudents(path) {
       if (firstName && lastName && age && field) {
         // Increment the counter for the respective field
         if (field === 'CS') {
-          CSCount++;
+          CSCount += 1;
           csList.push(firstName);
         } else if (field === 'SWE') {
-          SWECount++;
+          SWECount += 1;
           sweList.push(firstName);
         }
       }
