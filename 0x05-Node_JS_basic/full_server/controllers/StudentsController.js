@@ -28,6 +28,9 @@ class StudentsController {
     } catch (error) {
       res.status(500).send(error.message);
     }
+
+    // Explicitly return undefined at the end
+    return undefined;
   }
 }
 
