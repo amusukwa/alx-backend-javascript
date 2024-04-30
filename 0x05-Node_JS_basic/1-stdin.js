@@ -1,13 +1,26 @@
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+// 1-stdin.js
 
-process.stdin.setEncoding('utf8');
+// Define the function
+function promptName() {
+  process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-process.stdin.on('data', (input) => {
-  const name = input.trim();
+  process.stdin.setEncoding('utf8');
 
-  if (name) {
-    process.stdout.write(`Your name is: ${name}\n`);
-    process.stdout.write('This important software is now closing\n');
-    process.exit(0);
-  }
-});
+  process.stdin.once('data', (input) => {
+    const name = input.trim();
+
+    if (name) {
+      process.stdout.write(`Your name is: ${name}\n`);
+      process.stdout.write('This important software is now closing\n');
+      process.exit(0);
+    }
+  });
+}
+
+// Export the function
+module.exports = promptName;
+
+// Call the function if the script is executed directly
+if (require.main === module) {
+  promptName();
+}
