@@ -1,14 +1,11 @@
 const http = require('http');
 const { countStudents } = require('./3-read_file_async');
 
-// Function to handle requests
 function handleRequest(req, res, database) {
-  // Set the response headers
   res.setHeader('Content-Type', 'text/plain');
 
   // Check the URL path
   if (req.url === '/') {
-    // Return "Hello Holberton School!" for the root path
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     // Return the list of students for the /students path
@@ -24,7 +21,7 @@ function handleRequest(req, res, database) {
   } else {
     // Return a 404 Not Found error for unknown paths
     res.setHeader(404, { 'Content-Type': 'text/plain' });
-    res.end('404 Not Found\n');
+    res.end('404 Not Found');
   }
 }
 
