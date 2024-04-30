@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Attach the database file path to the request object
 app.use((req, res, next) => {
-  req.dbFile = process.argv[2]; // Assuming the database filename is passed as a command line argument
+  req.dbFile = process.argv[2];
   next();
 });
 
