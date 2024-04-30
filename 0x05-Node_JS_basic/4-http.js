@@ -6,13 +6,11 @@ const PORT = 1245;
 const app = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello Holberton School!\n');
+    res.end('Hello Holberton School!');
 });
 
 // Listen on the specified port
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(1245);
 
 // Export the server
 module.exports = app;
